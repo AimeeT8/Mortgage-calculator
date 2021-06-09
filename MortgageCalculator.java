@@ -9,7 +9,7 @@ public class MortgageCalculator
       final byte MONTHS_IN_YEAR = 12;
       final byte PERCENT = 100;
       
-      int principle = 0;
+      int principal = 0;
       float monthlyInterest = 0;
       int numberOfPayments = 0;
       
@@ -17,9 +17,9 @@ public class MortgageCalculator
       Scanner scanner = new Scanner(System.in);
       
       while (true) {
-      System.out.print("Principle: ");
-      principle = scanner.nextInt();
-      if (principle >= 1000 && principle <= 1_000_000)
+      System.out.print("Principal: ");
+      principal = scanner.nextInt();
+      if (principal >= 1000 && principal <= 1_000_000)
       break;
       System.out.println("Enter a value between 1000 and 1000000");
       }
@@ -45,7 +45,7 @@ public class MortgageCalculator
       System.out.println("Enter a value between 1 and 30.");
       }
       
-      double mortgage = principle
+      double mortgage = principal
             * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
             / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
             
